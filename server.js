@@ -17,6 +17,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/board", require("./routes/boardRouter"));
 
-app.listen(8080, () => {
+app.listen(3000, () => {
   console.log("listening");
 });
