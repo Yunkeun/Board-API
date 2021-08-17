@@ -1,13 +1,14 @@
-const mongoose = require("mongoose");
+var mongoose = require("mongoose");
 
-const { Schema } = mongoose;
-const {
+var { Schema } = mongoose;
+var {
   Types: { ObjectId }
 } = Schema;
-const boardSchema = new Schema({
+var boardSchema = new Schema({
   writer: {
     type: ObjectId,
-    required: true
+    required: true,
+    // ref: "User"
   },
   title: {
     type: String,
@@ -17,12 +18,16 @@ const boardSchema = new Schema({
     type: String,
     required: true
   },
+  /*
   imgPath: {
     type: String
-  },
+  },*/
   createdAt: {
     type: Date,
     default: Date.now
+  },
+  updatedAt: {
+    type: Date,
   }
 });
 

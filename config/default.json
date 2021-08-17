@@ -1,3 +1,3 @@
 {
-    "mongoURI":"mongodb+srv://dbUser:mongo1234@cluster0.7fnxh.mongodb.net/hi?retryWrites=true&w=majority"
+    "mongoURI":"mongodb+srv://dbUser:mongo1234@cluster0.7fnxh.mongodb.net/Grene-Planet-Boards?retryWrites=true&w=majority"
 }

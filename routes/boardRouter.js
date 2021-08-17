@@ -1,6 +1,6 @@
-const express = require("express");
-const router = express.Router();
-const Board = require("../models/board");
+var express = require("express");
+var router = express.Router();
+var Board = require("../models/board");
 
 router.post("/delete", async (req, res) => {
   try {
@@ -21,7 +21,8 @@ router.post("/update", async (req, res) => {
       {
         $set: {
           title: req.body.title,
-          content: req.body.content
+          content: req.body.content,
+          updatedAt:  Date.now()
         }
       }
     );
@@ -34,7 +35,7 @@ router.post("/update", async (req, res) => {
 
 router.post("/write", async (req, res) => {
   try {
-    let obj;
+    var obj;
 
     obj = {
       writer: req.body._id,
@@ -42,7 +43,7 @@ router.post("/write", async (req, res) => {
       content: req.body.content
     };
 
-    const board = new Board(obj);
+    var board = new Board(obj);
     await board.save();
     res.json({ message: "게시글이 업로드 되었습니다." });
   } catch (err) {
@@ -53,8 +54,8 @@ router.post("/write", async (req, res) => {
 
 router.post("/getBoardList", async (req, res) => {
   try {
-    const _id = req.body._id;
-    const board = await Board.find({ writer: _id }, null, {
+    var _id = req.body._id;
+    var board = await Board.find({ writer: _id }, null, {
       sort: { createdAt: -1 }
     });
     res.json({ list: board });
@@ -66,8 +67,8 @@ router.post("/getBoardList", async (req, res) => {
 
 router.post("/detail", async (req, res) => {
   try {
-    const _id = req.body._id;
-    const board = await Board.find({ _id });
+    var _id = req.body._id;
+    var board = await Board.find({ _id });
     res.json({ board });
   } catch (err) {
     console.log(err);
