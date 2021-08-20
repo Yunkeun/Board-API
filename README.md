@@ -1,13 +1,17 @@
 # Board-API
 Board API with NodeJS + MongoDB
 
-```bash
-├── Board-API
-    ├── README.md
-    ├── config
-    ├── index.html
-    ├── models
-    ├── package-lock.json
-    ├── package.json
-    ├── routes
-    └── server.js
+
+    ├── Board-API
+        │
+        ├── config
+        │   ├── db.js
+        │   └── default.json
+        ├── index.html
+        ├── models
+        │   └── board.js
+        ├── package-lock.json
+        ├── package.json
+        ├── routes
+        │   └── boardRouter.js
+        └── server.js
